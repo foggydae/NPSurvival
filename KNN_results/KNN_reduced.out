@@ -1,0 +1,41 @@
+For the pancreatitis dataset:
+
+[LOG] n_neighbor = 5
+/media/latte/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+/home/rzuo/.local/lib/python3.6/site-packages/fancyimpute/soft_impute.py:100: RuntimeWarning: divide by zero encountered in double_scalars
+  return (np.sqrt(ssd) / old_norm) < self.convergence_threshold
+[LOG] avg. concordance: 0.5222999037999038
+[LOG] avg. ipec: 0.20986596010006334
+-------------------------------------------------------
+[LOG] n_neighbor = 10
+[LOG] avg. concordance: 0.5296760461760461
+[LOG] avg. ipec: 0.1956220371503527
+-------------------------------------------------------
+[LOG] n_neighbor = 20
+[LOG] avg. concordance: 0.5413799903799904
+[LOG] avg. ipec: 0.18784838342680302
+-------------------------------------------------------
+[LOG] n_neighbor = 30
+[LOG] avg. concordance: 0.5365889850889851
+[LOG] avg. ipec: 0.18615632233056156
+-------------------------------------------------------
+For the ich dataset:
+
+[LOG] n_neighbor = 5
+[LOG] avg. concordance: 0.5583288021377949
+[LOG] avg. ipec: 0.2052967625892404
+-------------------------------------------------------
+[LOG] n_neighbor = 10
+[LOG] avg. concordance: 0.5739069362147089
+[LOG] avg. ipec: 0.19020538057784558
+-------------------------------------------------------
+[LOG] n_neighbor = 20
+[LOG] avg. concordance: 0.5720142906936215
+[LOG] avg. ipec: 0.1860409402345535
+-------------------------------------------------------
+[LOG] n_neighbor = 30
+[LOG] avg. concordance: 0.5823781805507144
+[LOG] avg. ipec: 0.18210319519593904
+-------------------------------------------------------

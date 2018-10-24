@@ -1,0 +1,73 @@
+For the pancreatitis dataset:
+
+[LOG] coef_penalizer = 0.05
+/media/latte/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+/home/rzuo/.local/lib/python3.6/site-packages/fancyimpute/soft_impute.py:100: RuntimeWarning: divide by zero encountered in double_scalars
+  return (np.sqrt(ssd) / old_norm) < self.convergence_threshold
+[LOG] avg. concordance: 0.5203350168350168
+[LOG] avg. ipec: 0.1829654174321154
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.1
+[LOG] avg. concordance: 0.5188030303030303
+[LOG] avg. ipec: 0.18296705930865131
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.15
+[LOG] avg. concordance: 0.5187696007696008
+[LOG] avg. ipec: 0.18296874384996648
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.2
+[LOG] avg. concordance: 0.5192739297739297
+[LOG] avg. ipec: 0.18297047101223968
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.3
+[LOG] avg. concordance: 0.5191984126984127
+[LOG] avg. ipec: 0.1829740530252337
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.4
+[LOG] avg. concordance: 0.5227720057720058
+[LOG] avg. ipec: 0.1829778049997576
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.5
+[LOG] avg. concordance: 0.5217669552669553
+[LOG] avg. ipec: 0.18298172658817757
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.6
+[LOG] avg. concordance: 0.5218576238576239
+[LOG] avg. ipec: 0.18298581728172436
+-------------------------------------------------------
+For the ich dataset:
+
+[LOG] coef_penalizer = 0.05
+[LOG] avg. concordance: 0.584140350877193
+[LOG] avg. ipec: 0.18481743252593397
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.1
+[LOG] avg. concordance: 0.584131404670617
+[LOG] avg. ipec: 0.18481816119872185
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.15
+[LOG] avg. concordance: 0.5843670268386197
+[LOG] avg. ipec: 0.18481889490850537
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.2
+[LOG] avg. concordance: 0.5843751597536889
+[LOG] avg. ipec: 0.18481963356140158
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.3
+[LOG] avg. concordance: 0.5835990472870919
+[LOG] avg. ipec: 0.1848211259948465
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.4
+[LOG] avg. concordance: 0.5842099453932845
+[LOG] avg. ipec: 0.18482263833781828
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.5
+[LOG] avg. concordance: 0.5847134890205646
+[LOG] avg. ipec: 0.18482417067727427
+-------------------------------------------------------
+[LOG] coef_penalizer = 0.6
+[LOG] avg. concordance: 0.5842108748692925
+[LOG] avg. ipec: 0.1848257229128189
+-------------------------------------------------------

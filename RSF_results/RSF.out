@@ -1,0 +1,290 @@
+[LOG] n_tree = 20, max_feature = 10, max_depth = 5
+[LOG] avg. concordance: 0.5415435305435305
+[LOG] avg. ipec: 0.1849968135204858
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.5427373737373737
+[LOG] avg. ipec: 0.19188118883036853
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 10, max_depth = 15
+[LOG] avg. concordance: 0.5396498316498317
+[LOG] avg. ipec: 0.19435758376438725
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 5
+[LOG] avg. concordance: 0.5462568542568542
+[LOG] avg. ipec: 0.1844357487212347
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.5450690235690235
+[LOG] avg. ipec: 0.1916724955473911
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 15
+[LOG] avg. concordance: 0.5437217412217412
+[LOG] avg. ipec: 0.19112067380358794
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 5
+[LOG] avg. concordance: 0.5340278980278981
+[LOG] avg. ipec: 0.18444412281494307
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5434627224627225
+[LOG] avg. ipec: 0.1890652292635794
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 15
+[LOG] avg. concordance: 0.5375798460798461
+[LOG] avg. ipec: 0.18999520282687385
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 5
+[LOG] avg. concordance: 0.5419555074555075
+[LOG] avg. ipec: 0.18387542766108603
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 10
+[LOG] avg. concordance: 0.5412857142857143
+[LOG] avg. ipec: 0.19063782479210656
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 15
+[LOG] avg. concordance: 0.5472847522847524
+[LOG] avg. ipec: 0.18984761926668228
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 5
+[LOG] avg. concordance: 0.5416096681096682
+[LOG] avg. ipec: 0.18470471636792563
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.5329047619047619
+[LOG] avg. ipec: 0.1914201273764747
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 15
+[LOG] avg. concordance: 0.5319295334295334
+[LOG] avg. ipec: 0.19149152417713558
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 5
+[LOG] avg. concordance: 0.5386370851370852
+[LOG] avg. ipec: 0.18408338302096902
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.5451839826839827
+[LOG] avg. ipec: 0.1903301602862955
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 15
+[LOG] avg. concordance: 0.5427525252525253
+[LOG] avg. ipec: 0.19032487321128655
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 5
+[LOG] avg. concordance: 0.5458819143819144
+[LOG] avg. ipec: 0.1853058377660035
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.5481892736892737
+[LOG] avg. ipec: 0.19092608107237263
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 15
+[LOG] avg. concordance: 0.5496904761904762
+[LOG] avg. ipec: 0.19038235325937103
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 5
+[LOG] avg. concordance: 0.5566106301106302
+[LOG] avg. ipec: 0.18209418265072352
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.559587542087542
+[LOG] avg. ipec: 0.18605638357687923
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 15
+[LOG] avg. concordance: 0.5592402597402598
+[LOG] avg. ipec: 0.18666126805956004
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 5
+[LOG] avg. concordance: 0.5414487734487734
+[LOG] avg. ipec: 0.18194392586255279
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5527914862914863
+[LOG] avg. ipec: 0.18700758486655086
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 15
+[LOG] avg. concordance: 0.5568848003848004
+[LOG] avg. ipec: 0.18581336086661204
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 5
+[LOG] avg. concordance: 0.5399790764790765
+[LOG] avg. ipec: 0.18267952484817926
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 10
+[LOG] avg. concordance: 0.5484415584415585
+[LOG] avg. ipec: 0.18659335578500155
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 15
+[LOG] avg. concordance: 0.5502294372294372
+[LOG] avg. ipec: 0.18603681827345359
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 5
+[LOG] avg. concordance: 0.5433501683501684
+[LOG] avg. ipec: 0.1833909352645895
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.544983645983646
+[LOG] avg. ipec: 0.1875330854024016
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 15
+[LOG] avg. concordance: 0.5530875420875421
+[LOG] avg. ipec: 0.18777091191889736
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 5
+[LOG] avg. concordance: 0.5386738816738816
+[LOG] avg. ipec: 0.1829083911863849
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.5397234247234247
+[LOG] avg. ipec: 0.18849775810340502
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 15
+[LOG] avg. concordance: 0.5383900913900913
+[LOG] avg. ipec: 0.18932586311461264
+-------------------------------------------------------
+For the ich dataset:
+
+[LOG] n_tree = 20, max_feature = 10, max_depth = 5
+[LOG] avg. concordance: 0.586682119205298
+[LOG] avg. ipec: 0.1828648768594329
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.5517093063785291
+[LOG] avg. ipec: 0.19079352774743966
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 10, max_depth = 15
+[LOG] avg. concordance: 0.5652528174741489
+[LOG] avg. ipec: 0.18883908822783085
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 5
+[LOG] avg. concordance: 0.5639036830486812
+[LOG] avg. ipec: 0.18387746938013233
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.5558591843848031
+[LOG] avg. ipec: 0.19253783848394052
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 20, max_depth = 15
+[LOG] avg. concordance: 0.5481006157778552
+[LOG] avg. ipec: 0.19421448266145877
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 5
+[LOG] avg. concordance: 0.574551992564192
+[LOG] avg. ipec: 0.18207554508676657
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5681872894155919
+[LOG] avg. ipec: 0.1880030658875541
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 40, max_depth = 15
+[LOG] avg. concordance: 0.5668429185546648
+[LOG] avg. ipec: 0.19130743593853627
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 5
+[LOG] avg. concordance: 0.5756186824677589
+[LOG] avg. ipec: 0.18279032924849084
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 10
+[LOG] avg. concordance: 0.5640144068781224
+[LOG] avg. ipec: 0.18934786539109785
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 60, max_depth = 15
+[LOG] avg. concordance: 0.5620499593354247
+[LOG] avg. ipec: 0.1911660496565008
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 5
+[LOG] avg. concordance: 0.5820075519925642
+[LOG] avg. ipec: 0.18125757444497248
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.5566988497734402
+[LOG] avg. ipec: 0.18941386292980827
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 80, max_depth = 15
+[LOG] avg. concordance: 0.558439409782735
+[LOG] avg. ipec: 0.19130672323875889
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 5
+[LOG] avg. concordance: 0.5756807249912862
+[LOG] avg. ipec: 0.18228588276748775
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.5441103752759381
+[LOG] avg. ipec: 0.19383511629618577
+-------------------------------------------------------
+[LOG] n_tree = 20, max_feature = 200, max_depth = 15
+[LOG] avg. concordance: 0.5581956546996631
+[LOG] avg. ipec: 0.19036954942957401
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 5
+[LOG] avg. concordance: 0.5712704775182991
+[LOG] avg. ipec: 0.18265095192330866
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.5709822237713489
+[LOG] avg. ipec: 0.1875476305411736
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 15
+[LOG] avg. concordance: 0.5674326710816777
+[LOG] avg. ipec: 0.1889404505565763
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 5
+[LOG] avg. concordance: 0.5746723597072151
+[LOG] avg. ipec: 0.18281333284904655
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.5685569884977344
+[LOG] avg. ipec: 0.18759802200639894
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 15
+[LOG] avg. concordance: 0.5566863018473336
+[LOG] avg. ipec: 0.1900300400603602
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 5
+[LOG] avg. concordance: 0.5803139305216684
+[LOG] avg. ipec: 0.18162351166771573
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5711834553270594
+[LOG] avg. ipec: 0.18865654160101636
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 15
+[LOG] avg. concordance: 0.5750737771581271
+[LOG] avg. ipec: 0.1875562049151463
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 5
+[LOG] avg. concordance: 0.5750560009294758
+[LOG] avg. ipec: 0.18247657274766307
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 10
+[LOG] avg. concordance: 0.5671832229580573
+[LOG] avg. ipec: 0.1890300220313696
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 60, max_depth = 15
+[LOG] avg. concordance: 0.5618098059718835
+[LOG] avg. ipec: 0.18860752491238889
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 5
+[LOG] avg. concordance: 0.576747182525851
+[LOG] avg. ipec: 0.18162026566062683
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.578832229580574
+[LOG] avg. ipec: 0.18622839664444085
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 15
+[LOG] avg. concordance: 0.5737805274776345
+[LOG] avg. ipec: 0.18877015610109474
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 5
+[LOG] avg. concordance: 0.5791077030324155
+[LOG] avg. ipec: 0.18171426515483208
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.5583422795399094
+[LOG] avg. ipec: 0.18810789721035653
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 15
+[LOG] avg. concordance: 0
+[LOG] avg. ipec: 1
+
