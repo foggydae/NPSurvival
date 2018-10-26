@@ -22,36 +22,34 @@ class RandomSurvivalForest():
         self.standardalizer = StandardScaler()
 
     def _train_pca(self, train_df):
-        if self.pca_flag:
-            train_x = train_df.drop(columns=[self._duration_col, self._event_col]).values
-
-            self.standardalizer.fit(train_x)
-            train_x = self.standardalizer.transform(train_x)
-
-            self.pca.fit(train_x)
-            reduced_x = self.pca.transform(train_x)
-            reduced_train_df = pd.DataFrame(reduced_x).set_index(train_df.index)
-            columns = ["C" + str(i) for i in range(reduced_train_df.shape[1])]
-            reduced_train_df.columns = columns
-            reduced_train_df["LOS"] = train_df["LOS"]
-            reduced_train_df["OUT"] = train_df["OUT"]
-            return reduced_train_df
-        else:
+        if not self.pca_flag:
             return train_df
+        train_x = \
+            train_df.drop(columns=[self._duration_col, self._event_col]).values
+        self.standardalizer.fit(train_x)
+        train_x = self.standardalizer.transform(train_x)
+        self.pca.fit(train_x)
+        reduced_x = self.pca.transform(train_x)
+        reduced_train_df = pd.DataFrame(reduced_x).set_index(train_df.index)
+        columns = ["C" + str(i) for i in range(reduced_train_df.shape[1])]
+        reduced_train_df.columns = columns
+        reduced_train_df["LOS"] = train_df["LOS"]
+        reduced_train_df["OUT"] = train_df["OUT"]
+        return reduced_train_df
 
     def _test_pca(self, test_df):
-        if self.pca_flag:
-            test_x = test_df.drop(columns=[self._duration_col, self._event_col]).values
-            test_x = self.standardalizer.transform(test_x)
-            reduced_x = self.pca.transform(test_x)
-            reduced_test_df = pd.DataFrame(reduced_x).set_index(test_df.index)
-            columns = ["C" + str(i) for i in range(reduced_test_df.shape[1])]
-            reduced_test_df.columns = columns
-            reduced_test_df["LOS"] = test_df["LOS"]
-            reduced_test_df["OUT"] = test_df["OUT"]
-            return reduced_test_df
-        else:
+        if not self.pca_flag:
             return test_df
+        test_x = \
+            test_df.drop(columns=[self._duration_col, self._event_col]).values
+        test_x = self.standardalizer.transform(test_x)
+        reduced_x = self.pca.transform(test_x)
+        reduced_test_df = pd.DataFrame(reduced_x).set_index(test_df.index)
+        columns = ["C" + str(i) for i in range(reduced_test_df.shape[1])]
+        reduced_test_df.columns = columns
+        reduced_test_df["LOS"] = test_df["LOS"]
+        reduced_test_df["OUT"] = test_df["OUT"]
+        return reduced_test_df
 
     def _logrank(self, x, feature):
         c = x[feature].median()
@@ -193,32 +191,36 @@ class RandomSurvivalForest():
             tree[name] = {}
             self._build(split_x, tree[name], depth + 1)
 
-    def _compute_survival(self, row, tree):
-        count = tree["count"]
-        t = tree["t"]
-        total = tree["total"]
-        h = 1
-        survivors = float(total)
-        for ti in t:
-            if ti <= row[self._time_column]:
-                h = h * (1 - count[(ti, 1)] / survivors)
-            survivors = survivors - count[(ti, 1)] - count[(ti, 0)]
-        return h
-
-    def _predict_row(self, tree, row, target="survival"):
+    def _pred_hazard(self, tree, row):
         if tree["type"] == "leaf":
-            if target == "hazard":
-                return tree["cumulative_hazard_function"]
-            else:
-                return self._compute_survival(row, tree)
+            return tree["cumulative_hazard_function"]
         else:
             if row[tree["feature"]] > tree["median"]:
-                return self._predict_row(tree["right"], row, target=target)
+                return self._pred_hazard(tree["right"], row)
             else:
-                return self._predict_row(tree["left"], row, target=target)
+                return self._pred_hazard(tree["left"], row)
+
+    def _pred_survival(self, tree, row, checkpoints):
+        if tree["type"] == "leaf":
+            count = tree["count"]
+            result = []
+            for checkpoint in checkpoints:
+                survivors = float(tree["total"])
+                tmp_proba = 1
+                for ti in tree["t"]:
+                    if ti <= checkpoint:
+                        tmp_proba *= (1 - count[(ti, 1)] / survivors)
+                    survivors = survivors - count[(ti, 1)] - count[(ti, 0)]
+                result.append(tmp_proba)
+            return result
+        else:
+            if row[tree["feature"]] > tree["median"]:
+                return self._pred_survival(tree["right"], row, checkpoints)
+            else:
+                return self._pred_survival(tree["left"], row, checkpoints)
 
     def _get_ensemble_cumulative_hazard(self, row):
-        hazard_functions = [self._predict_row(tree, row, target="hazard")
+        hazard_functions = [self._pred_hazard(tree, row)
                             for tree in self._trees]
         supplement_hazard_value = np.zeros(len(hazard_functions))
         # for each observed time, make sure every hazard_function generated
@@ -303,6 +305,7 @@ class RandomSurvivalForest():
             trees = tmp_pool.map(self._grow_tree, sampled_datas)
         self._trees = trees
 
+
     def pred_proba(self, test_df, time):
         assert isinstance(test_df, pd.DataFrame)
         assert isinstance(time, int) or \
@@ -311,19 +314,15 @@ class RandomSurvivalForest():
 
         reduced_test_df = self._test_pca(test_df)
         if isinstance(time, int) or isinstance(time, float):
-            time_list = [time] * reduced_test_df.shape[0]
+            time_list = [time]
         else:
-            assert len(time) == reduced_test_df.shape[0]
             time_list = time
-
-        reduced_test_df = reduced_test_df.copy()
-        reduced_test_df[self._time_column] = time_list
 
         proba_pred = []
         for _, row in reduced_test_df.iterrows():
-            probas = [self._predict_row(self._trees[i], row)
+            probas = [self._pred_survival(self._trees[i], row, time_list)
                       for i in range(self._n_trees)]
-            proba_pred.append(np.average(probas))
+            proba_pred.append(list(np.average(np.array(probas), axis=0)))
 
         return proba_pred
 
