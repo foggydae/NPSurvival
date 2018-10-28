@@ -324,7 +324,7 @@ class RandomSurvivalForest():
                       for i in range(self._n_trees)]
             proba_pred.append(list(np.average(np.array(probas), axis=0)))
 
-        return proba_pred
+        return np.array(proba_pred)
 
     def pred_median_time(self, test_df, average_to_get_median=True):
         assert isinstance(test_df, pd.DataFrame)
