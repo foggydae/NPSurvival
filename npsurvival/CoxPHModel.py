@@ -46,13 +46,16 @@ class CoxPHModel:
         reduced_test_df["OUT"] = test_df["OUT"]
         return reduced_test_df
 
-    def _predict_median_survival_times(self, x_test,
-                                       average_to_get_median=True):
+    def _predict_median_survival_times(self, x_test, average_to_get_median=True):
+        # note: from inspecting Lifelines' code, Lifelines does not average to
+        # get the median (e.g., find 2 nearest median points and take their
+        # average); to get numerically nearly identical results, set parameter
+        # `average_to_get_median` to False, plug in the beta learned by the
+        # Lifelines' Cox proportional hazards, and be sure to subtract off the
+        # training feature means from both `x_test` and `x_train`
         num_test_subjects = len(x_test)
         median_survival_times = np.zeros(num_test_subjects)
-
         log_minus_log_half = np.log(-np.log(0.5))
-
         for subj_idx in range(num_test_subjects):
             log_hazard = \
                 self.log_baseline_hazard + np.inner(self.beta, x_test[subj_idx])
@@ -60,7 +63,6 @@ class CoxPHModel:
             for time_idx in range(self.num_unique_times):
                 log_cumulative_hazard[time_idx] \
                     = logsumexp(log_hazard[:time_idx + 1])
-
             t_inf = np.inf
             t_sup = 0.
             for time_idx, t in enumerate(self.sorted_unique_times):
@@ -69,12 +71,10 @@ class CoxPHModel:
                     t_inf = t
                 if log_minus_log_half >= cur_chazard and t > t_sup:
                     t_sup = t
-
             if average_to_get_median:
                 median_survival_times[subj_idx] = 0.5 * (t_inf + t_sup)
             else:
                 median_survival_times[subj_idx] = t_inf
-
         return median_survival_times
 
     def _predict_probas(self, x_test):
@@ -121,12 +121,6 @@ class CoxPHModel:
                      intr=False)
         self.beta = glmnetCoef(fit, s=np.array([self._lambda])).flatten()
 
-        # note: from inspecting Lifelines' code, Lifelines does not average to
-        # get the median (e.g., find 2 nearest median points and take their
-        # average); to get numerically nearly identical results, set parameter
-        # `average_to_get_median` to False, plug in the beta learned by the
-        # Lifelines' Cox proportional hazards, and be sure to subtract off the
-        # training feature means from both `x_test` and `x_train`
         observed_times = train_y[:, 0]
         event_indicators = train_y[:, 1]
         # For each observed time, how many times the event occurred
