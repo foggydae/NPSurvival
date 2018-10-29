@@ -82,9 +82,8 @@ class KNNKaplanMeier():
         reduced_test_df = self._test_pca(test_df)
 
         if isinstance(time, int) or isinstance(time, float):
-            time_list = [time] * reduced_test_df.shape[0]
+            time_list = [time]
         else:
-            assert len(time) == reduced_test_df.shape[0]
             time_list = time
 
         test_x = \
@@ -92,7 +91,7 @@ class KNNKaplanMeier():
         distance_matrix, neighbor_matrix = \
             self.neighbors.kneighbors(X=test_x, n_neighbors=self.n_neighbors)
 
-        proba_pred = []
+        proba_matrix = []
         for test_idx, test_point in enumerate(test_x):
             neighbor_train_y = \
                 self.train_df.iloc[neighbor_matrix[test_idx]][
@@ -101,6 +100,6 @@ class KNNKaplanMeier():
             kmf = KaplanMeierFitter()
             kmf.fit(neighbor_train_y[self._duration_col],
                     neighbor_train_y[self._event_col])
-            proba_pred.append(kmf.predict(time_list[test_idx]))
+            proba_matrix.append(kmf.predict(time_list))
 
-        return proba_pred
+        return np.array(proba_matrix)

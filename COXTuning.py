@@ -41,8 +41,9 @@ if __name__ == '__main__':
         train_dfs["ich"].append(train_df)
         test_dfs["ich"].append(test_df)
 
+
     # get the parameters
-    lambds = [0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
+    lambds = [0.01, 0.03, 0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
 
     concordances_wo_pca = {
         "pancreatitis": np.zeros(len(lambds)),
@@ -64,8 +65,8 @@ if __name__ == '__main__':
     for dataset_type in ["pancreatitis", "ich"]:
         cur_trains = train_dfs[dataset_type]
         cur_tests = test_dfs[dataset_type]
-
         print("\nFor the", dataset_type, "dataset:")
+
         for row, lambd in enumerate(lambds):
             print("[LOG] lambd = {}".format(lambd))
 
@@ -95,20 +96,20 @@ if __name__ == '__main__':
                 tmp_ipecs_wo_pca.append(ipec_score)
 
                 # with PCA
-                model = CoxPHModel(alpha=1, lambda_=lambd, 
+                pca_model = CoxPHModel(alpha=1, lambda_=lambd, 
                     pca_flag=True, n_components=20)
-                model.fit(cur_train, duration_col='LOS', event_col='OUT')
-                test_time_median_pred = model.pred_median_time(cur_test)
-                proba_matrix = \
-                    model.pred_proba(cur_test, time=ipec.get_check_points())
+                pca_model.fit(cur_train, duration_col='LOS', event_col='OUT')
+                pca_test_time_median_pred = pca_model.pred_median_time(cur_test)
+                pca_proba_matrix = \
+                    pca_model.pred_proba(cur_test, time=ipec.get_check_points())
 
-                concordance = evaluate_predict_result(test_time_median_pred, 
+                pca_concordance = evaluate_predict_result(pca_test_time_median_pred, 
                     cur_test, print_result=False)
-                ipec_score = ipec.calc_ipec(proba_matrix, 
+                pca_ipec_score = ipec.calc_ipec(pca_proba_matrix, 
                     list(cur_test["LOS"]), list(cur_test["OUT"]))
 
-                tmp_concordances_w_pca.append(concordance)
-                tmp_ipecs_w_pca.append(ipec_score)
+                tmp_concordances_w_pca.append(pca_concordance)
+                tmp_ipecs_w_pca.append(pca_ipec_score)
 
 
             avg_concordance_wo_pca = np.average(tmp_concordances_wo_pca)

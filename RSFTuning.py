@@ -4,9 +4,6 @@ from Survival.Utils import calculate_dataset_size
 from Survival.Utils import evaluate_predict_result
 from Survival.IPEC import IPEC
 
-from Survival.CoxPHModel import CoxPHModel
-from Survival.KNNKaplanMeier import KNNKaplanMeier
-from Survival.AalenAdditiveModel import AalenAdditiveModel
 from Survival.RandomSurvivalForest import RandomSurvivalForest
 
 import numpy as np
@@ -16,7 +13,6 @@ if __name__ == '__main__':
     
     fe = FeatureEngineer(verbose=False)
     sources = fe.get_diseases_list()
-
 
     # load data
     train_dfs = {"pancreatitis": [], "ich": []}
@@ -47,63 +43,62 @@ if __name__ == '__main__':
 
 
     # get the parameters
-    n_trees = [20, 50, 100]
-    max_features = [10, 20]
+    n_tree = 50
+    max_features = [10, 20, 40, 80, 200]
     max_depths = [3, 6, 10]
 
     concordances = {
-        "pancreatitis": {20: np.zeros((len(max_features), len(max_depths))), 
-                         50: np.zeros((len(max_features), len(max_depths))),
-                         100: np.zeros((len(max_features), len(max_depths)))},
-        "ich": {20: np.zeros((len(max_features), len(max_depths))), 
-                50: np.zeros((len(max_features), len(max_depths))),
-                100: np.zeros((len(max_features), len(max_depths)))}
+        "pancreatitis": np.zeros((len(max_features), len(max_depths))), 
+        "ich": np.zeros((len(max_features), len(max_depths)))
     }
-
     ipecs = {
-        "pancreatitis": {20: np.zeros((len(max_features), len(max_depths))), 
-                         50: np.zeros((len(max_features), len(max_depths))),
-                         100: np.zeros((len(max_features), len(max_depths)))},
-        "ich": {20: np.zeros((len(max_features), len(max_depths))), 
-                50: np.zeros((len(max_features), len(max_depths))),
-                100: np.zeros((len(max_features), len(max_depths)))}
+        "pancreatitis": np.zeros((len(max_features), len(max_depths))), 
+        "ich": np.zeros((len(max_features), len(max_depths)))
     }
 
     for dataset_type in ["pancreatitis", "ich"]:
-        print("For the", dataset_type, "dataset:\n")
-        for n_tree in n_trees:
-            for row, max_feature in enumerate(max_features):
-                for col, max_depth in enumerate(max_depths):
-                    print("[LOG] n_tree = {}, max_feature = {}, max_depth = {}".format(
-                        n_tree, max_feature, max_depth))
+        cur_trains = train_dfs[dataset_type]
+        cur_tests = test_dfs[dataset_type]
+        print("\nFor the", dataset_type, "dataset:")
 
-                    tmp_concordances = []
-                    tmp_ipecs = []
+        for row, max_feature in enumerate(max_features):
+            for col, max_depth in enumerate(max_depths):
+                print("[LOG] n_tree = {}, max_feature = {}, max_depth = {}".format(
+                    n_tree, max_feature, max_depth))
 
-                    for index in range(len(train_dfs[dataset_type])):
-                        model = RandomSurvivalForest(n_trees=n_tree, 
-                            max_features=max_feature, max_depth=max_depth)
-                        model.fit(train_dfs[dataset_type][index], duration_col='LOS', event_col='OUT')
-                        test_time_median_pred = model.pred_median_time(test_dfs[dataset_type][index])
-                        concordance = evaluate_predict_result(test_time_median_pred, 
-                            test_dfs[dataset_type][index], print_result=False)
-                        tmp_concordances.append(concordance)
-                        ipec = IPEC(train_dfs[dataset_type][index], model.pred_proba, 
-                            g_type="All_One", t_thd=0.8, t_step="obs")
-                        ipec_score = ipec.avg_ipec(test_dfs[dataset_type][index], num_workers=2, 
-                            print_result=False)
-                        tmp_ipecs.append(ipec_score)
+                tmp_concordances = []
+                tmp_ipecs = []
 
-                    avg_concordance = np.average(tmp_concordances)
-                    avg_ipec = np.average(tmp_ipecs)
+                for index, cur_train in enumerate(cur_trains):
+                    cur_test = cur_tests[index]
+                    ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
+                        t_step="obs", time_col='LOS', death_identifier='OUT')
 
-                    print("[LOG] avg. concordance:", avg_concordance)
-                    print("[LOG] avg. ipec:", avg_ipec)
+                    model = RandomSurvivalForest(n_trees=n_tree, 
+                        max_features=max_feature, max_depth=max_depth, 
+                        pca_flag=True, n_components=int(np.max([20, max_feature*1.2])))
+                    model.fit(cur_train, duration_col='LOS', event_col='OUT')
+                    test_time_median_pred = model.pred_median_time(cur_test)
+                    proba_matrix = \
+                        model.pred_proba(cur_test, time=ipec.get_check_points())
 
-                    concordances[dataset_type][n_tree][row][col] = avg_concordance
-                    ipecs[dataset_type][n_tree][row][col] = avg_ipec
+                    concordance = evaluate_predict_result(test_time_median_pred, 
+                        cur_test, print_result=False)
+                    ipec_score = ipec.calc_ipec(proba_matrix, 
+                        list(cur_test["LOS"]), list(cur_test["OUT"]))
 
-                    print("-------------------------------------------------------")
+                    tmp_concordances.append(concordance)
+                    tmp_ipecs.append(ipec_score)
 
-                with open('RSF.pickle', 'wb') as f:
-                    pickle.dump([concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)
+                avg_concordance = np.average(tmp_concordances)
+                avg_ipec = np.average(tmp_ipecs)
+
+                print("[LOG] avg. concordance:", avg_concordance)
+                print("[LOG] avg. ipec:", avg_ipec)
+
+                concordances[dataset_type][row][col] = avg_concordance
+                ipecs[dataset_type][row][col] = avg_ipec
+
+                print("-------------------------------------------------------")
+                with open('RSF_results/RSF_w_pca.pickle', 'wb') as f:
+                    pickle.dump([max_features, max_depths, concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)

@@ -111,9 +111,10 @@ class CoxPHModel:
         self._duration_col = duration_col
         self._event_col = event_col
 
-        train_y = train_df[[duration_col, event_col]].values
-        train_x = train_df.drop(columns=[duration_col, event_col]).values
-        self._sort_unique_times = sorted(list(train_df[duration_col].unique()))
+        reduced_train_df = self._train_pca(train_df)
+        train_y = reduced_train_df[[duration_col, event_col]].values
+        train_x = reduced_train_df.drop(columns=[duration_col, event_col]).values
+        self._sort_unique_times = sorted(list(reduced_train_df[duration_col].unique()))
         self.mean_remover.fit(train_x)
 
         fit = glmnet(x=train_x.copy(), y=train_y.copy(),
@@ -147,8 +148,9 @@ class CoxPHModel:
 
     def pred_median_time(self, test_df, remove_mean=True):
         assert isinstance(test_df, pd.DataFrame)
+        reduced_test_df = self._test_pca(test_df)
         test_x = \
-            test_df.drop(columns=[self._duration_col, self._event_col]).values
+            reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
         if remove_mean:
             test_x = self.mean_remover.transform(test_x)
         return self._predict_median_survival_times(test_x)
@@ -157,13 +159,15 @@ class CoxPHModel:
         assert isinstance(test_df, pd.DataFrame)
         assert isinstance(time, int) or isinstance(time, float) or \
                isinstance(time, list)
+        reduced_test_df = self._test_pca(test_df)
+
         if isinstance(time, int) or isinstance(time, float):
             time_indice = [self._find_nearest_time_index(time)]
         else:
             time_indice = [self._find_nearest_time_index(cur_time)
                           for cur_time in time]
         test_x = \
-            test_df.drop(columns=[self._duration_col, self._event_col]).values
+            reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
         tmp_probas = self._predict_probas(test_x)
         proba_matrix = np.zeros((len(test_x), len(time_indice)))
         for row in range(len(test_x)):
