@@ -1,5 +1,4 @@
 # from multiprocessing import Pool
-from pathos.multiprocessing import ProcessingPool as Pool
 from lifelines import KaplanMeierFitter
 import numpy as np
 import pandas as pd
