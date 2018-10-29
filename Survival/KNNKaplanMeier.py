@@ -52,6 +52,7 @@ class KNNKaplanMeier():
         train_x = self.train_df.drop(columns=[duration_col, event_col]).values
         self.neighbors = KNeighborsClassifier()
         self.neighbors.fit(train_x, np.zeros(len(train_x)))
+        self.train_points = len(train_x)
 
     def pred_median_time(self, test_df):
         assert isinstance(test_df, pd.DataFrame)
@@ -59,7 +60,7 @@ class KNNKaplanMeier():
         test_x = \
             reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
         distance_matrix, neighbor_matrix = \
-            self.neighbors.kneighbors(X=test_x, n_neighbors=self.n_neighbors)
+            self.neighbors.kneighbors(X=test_x, n_neighbors=int(np.min([self.n_neighbors, self.train_points])))
 
         test_time_median_pred = []
         for test_idx, test_point in enumerate(test_x):
