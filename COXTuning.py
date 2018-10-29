@@ -44,11 +44,19 @@ if __name__ == '__main__':
     # get the parameters
     lambds = [0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
 
-    concordances = {
+    concordances_wo_pca = {
         "pancreatitis": np.zeros(len(lambds)),
         "ich": np.zeros(len(lambds))
     }
-    ipecs = {
+    ipecs_wo_pca = {
+        "pancreatitis": np.zeros(len(lambds)),
+        "ich": np.zeros(len(lambds))
+    }
+    concordances_w_pca = {
+        "pancreatitis": np.zeros(len(lambds)),
+        "ich": np.zeros(len(lambds))
+    }
+    ipecs_w_pca = {
         "pancreatitis": np.zeros(len(lambds)),
         "ich": np.zeros(len(lambds))
     }
@@ -61,14 +69,17 @@ if __name__ == '__main__':
         for row, lambd in enumerate(lambds):
             print("[LOG] lambd = {}".format(lambd))
 
-            tmp_concordances = []
-            tmp_ipecs = []
+            tmp_concordances_wo_pca = []
+            tmp_ipecs_wo_pca = []
+            tmp_concordances_w_pca = []
+            tmp_ipecs_w_pca = []
             for index, cur_train in enumerate(cur_trains):
                 print(index, end=" ")
                 cur_test = cur_tests[index]
                 ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
                     t_step="obs", time_col='LOS', death_identifier='OUT')
 
+                # without PCA
                 model = CoxPHModel(alpha=1, lambda_=lambd)
                 model.fit(cur_train, duration_col='LOS', event_col='OUT')
                 test_time_median_pred = model.pred_median_time(cur_test)
@@ -80,19 +91,44 @@ if __name__ == '__main__':
                 ipec_score = ipec.calc_ipec(proba_matrix, 
                     list(cur_test["LOS"]), list(cur_test["OUT"]))
 
-                tmp_concordances.append(concordance)
-                tmp_ipecs.append(ipec_score)
+                tmp_concordances_wo_pca.append(concordance)
+                tmp_ipecs_wo_pca.append(ipec_score)
 
-            avg_concordance = np.average(tmp_concordances)
-            avg_ipec = np.average(tmp_ipecs)
+                # with PCA
+                model = CoxPHModel(alpha=1, lambda_=lambd, 
+                    pca_flag=True, n_components=20)
+                model.fit(cur_train, duration_col='LOS', event_col='OUT')
+                test_time_median_pred = model.pred_median_time(cur_test)
+                proba_matrix = \
+                    model.pred_proba(cur_test, time=ipec.get_check_points())
 
-            print("[LOG] avg. concordance:", avg_concordance)
-            print("[LOG] avg. ipec:", avg_ipec)
+                concordance = evaluate_predict_result(test_time_median_pred, 
+                    cur_test, print_result=False)
+                ipec_score = ipec.calc_ipec(proba_matrix, 
+                    list(cur_test["LOS"]), list(cur_test["OUT"]))
 
-            concordances[dataset_type][row] = avg_concordance
-            ipecs[dataset_type][row] = avg_ipec
+                tmp_concordances_w_pca.append(concordance)
+                tmp_ipecs_w_pca.append(ipec_score)
+
+
+            avg_concordance_wo_pca = np.average(tmp_concordances_wo_pca)
+            avg_ipec_wo_pca = np.average(tmp_ipecs_wo_pca)
+            print("[LOG] avg. concordance w/o pca:", avg_concordance_wo_pca)
+            print("[LOG] avg. ipec w/o pca:", avg_ipec_wo_pca)
+            concordances_wo_pca[dataset_type][row] = avg_concordance_wo_pca
+            ipecs_wo_pca[dataset_type][row] = avg_ipec_wo_pca
+
+            avg_concordance_w_pca = np.average(tmp_concordances_w_pca)
+            avg_ipec_w_pca = np.average(tmp_ipecs_w_pca)
+            print("[LOG] avg. concordance w/ pca:", avg_concordance_w_pca)
+            print("[LOG] avg. ipec w/ pca:", avg_ipec_w_pca)
+            concordances_w_pca[dataset_type][row] = avg_concordance_w_pca
+            ipecs_w_pca[dataset_type][row] = avg_ipec_w_pca
 
             print("-------------------------------------------------------")
 
-    with open('COXModel/COX.pickle', 'wb') as f:
-        pickle.dump([concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)
+    with open('COX_results/COX_wo_pca.pickle', 'wb') as f:
+        pickle.dump([lambds, concordances_wo_pca, ipecs_wo_pca], f, pickle.HIGHEST_PROTOCOL)
+
+    with open('COX_results/COX_w_pca.pickle', 'wb') as f:
+        pickle.dump([lambds, concordances_w_pca, ipecs_w_pca], f, pickle.HIGHEST_PROTOCOL)
