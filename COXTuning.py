@@ -1,10 +1,10 @@
-from npsurvival.FeatureEngineer import FeatureEngineer
-from npsurvival.Utils import model_prepare
-from npsurvival.Utils import calculate_dataset_size
-from npsurvival.Utils import evaluate_predict_result
-from npsurvival.IPEC import IPEC
+from Survival.FeatureEngineer import FeatureEngineer
+from Survival.Utils import model_prepare
+from Survival.Utils import calculate_dataset_size
+from Survival.Utils import evaluate_predict_result
+from Survival.IPEC import IPEC
 
-from npsurvival.CoxPHModel import CoxPHModel
+from Survival.CoxPHModel import CoxPHModel
 
 import numpy as np
 import pickle
