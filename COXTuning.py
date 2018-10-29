@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
 
     # get the parameters
-    lambds = [0.01, 0.03, 0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
+    lambds = [0.01, 0.02, 0.03, 0.04, 0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
 
     concordances_wo_pca = {
         "pancreatitis": np.zeros(len(lambds)),

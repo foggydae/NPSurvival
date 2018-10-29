@@ -42,7 +42,7 @@ if __name__ == '__main__':
         test_dfs["ich"].append(test_df)
 
     # get the parameters
-    n_neighbors = [5, 15, 30, 50, 80, 120, 150, 200, 250]
+    n_neighbors = [3, 5, 10, 15, 20, 30, 50, 80, 120, 200]
 
     concordances_wo_pca = {
         "pancreatitis": np.zeros(len(n_neighbors)),
@@ -79,7 +79,6 @@ if __name__ == '__main__':
                 ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
                     t_step="obs", time_col='LOS', death_identifier='OUT')
 
-                model = KNNKaplanMeier(n_neighbors=n_neighbor)
                 # without PCA
                 model = KNNKaplanMeier(n_neighbors=n_neighbor)
                 model.fit(cur_train, duration_col='LOS', event_col='OUT')
