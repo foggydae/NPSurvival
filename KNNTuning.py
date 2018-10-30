@@ -1,8 +1,7 @@
-from Survival.FeatureEngineer import FeatureEngineer
-from Survival.Utils import model_prepare
-from Survival.Utils import calculate_dataset_size
-from Survival.Utils import evaluate_predict_result
-from Survival.IPEC import IPEC
+from Survival.Utils import load_val_data
+from Survival.Utils import load_score_containers
+from Survival.Utils import calc_scores
+from Survival.Utils import filename_generator
 
 from Survival.KNNKaplanMeier import KNNKaplanMeier
 
@@ -11,125 +10,44 @@ import pickle
 
 if __name__ == '__main__':
     
-    fe = FeatureEngineer(verbose=False)
-    sources = fe.get_diseases_list()
-
-    # load data
-    train_dfs = {"pancreatitis": [], "ich": []}
-    test_dfs = {"pancreatitis": [], "ich": []}
-    ## pancreatitis datasets
-    for i in range(50):
-        patient_dict, feature_set, train_id_list, test_id_list = \
-            fe.load_data_as_dict(src_idx=0, 
-                file_prefix="cross_val/10-5fold_"+str(i)+"_", 
-                low_freq_event_thd=0.03, 
-                low_freq_value_thd=0.01)
-        train_df, test_df, feature_list = \
-            model_prepare(patient_dict, feature_set, train_id_list, test_id_list)
-        train_dfs["pancreatitis"].append(train_df)
-        test_dfs["pancreatitis"].append(test_df)
-
-    ## ich datasets
-    for i in range(5):
-        patient_dict, feature_set, train_id_list, test_id_list = \
-            fe.load_data_as_dict(src_idx=1, 
-                file_prefix="cross_val/1-5fold_"+str(i)+"_", 
-                low_freq_event_thd=0.03, 
-                low_freq_value_thd=0.01)
-        train_df, test_df, feature_list = \
-            model_prepare(patient_dict, feature_set, train_id_list, test_id_list)
-        train_dfs["ich"].append(train_df)
-        test_dfs["ich"].append(test_df)
-
     # get the parameters
     n_neighbors = [3, 5, 10, 15, 20, 30, 50, 80, 120, 200]
+    pca_flag = False
+    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    filename = filename_generator("KNN", pca_flag, dataset_idxs)
 
-    concordances_wo_pca = {
-        "pancreatitis": np.zeros(len(n_neighbors)),
-        "ich": np.zeros(len(n_neighbors))
-    }
-    ipecs_wo_pca = {
-        "pancreatitis": np.zeros(len(n_neighbors)),
-        "ich": np.zeros(len(n_neighbors))
-    }
-    concordances_w_pca = {
-        "pancreatitis": np.zeros(len(n_neighbors)),
-        "ich": np.zeros(len(n_neighbors))
-    }
-    ipecs_w_pca = {
-        "pancreatitis": np.zeros(len(n_neighbors)),
-        "ich": np.zeros(len(n_neighbors))
-    }
 
-    for dataset_type in ["pancreatitis", "ich"]:
-        cur_trains = train_dfs[dataset_type]
-        cur_tests = test_dfs[dataset_type]
-        print("\nFor the", dataset_type, "dataset:")
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs)
+    concordances, ipecs = load_score_containers(dataset_names, [n_neighbors])
+
+    for dataset_name in dataset_names:
+        print("\nFor the " + dataset_name + " dataset:")
 
         for row, n_neighbor in enumerate(n_neighbors):
             print("[LOG] n_neighbor = {}".format(n_neighbor))
 
-            tmp_concordances_wo_pca = []
-            tmp_ipecs_wo_pca = []
-            tmp_concordances_w_pca = []
-            tmp_ipecs_w_pca = []
-            for index, cur_train in enumerate(cur_trains):
-                print(index, end=" ")
-                cur_test = cur_tests[index]
-                ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
-                    t_step="obs", time_col='LOS', death_identifier='OUT')
+            tmp_concordances = []
+            tmp_ipecs = []
 
-                # without PCA
-                model = KNNKaplanMeier(n_neighbors=n_neighbor)
-                model.fit(cur_train, duration_col='LOS', event_col='OUT')
-                test_time_median_pred = model.pred_median_time(cur_test)
-                proba_matrix = \
-                    model.pred_proba(cur_test, time=ipec.get_check_points())
-
-                concordance = evaluate_predict_result(test_time_median_pred, 
-                    cur_test, print_result=False)
-                ipec_score = ipec.calc_ipec(proba_matrix, 
-                    list(cur_test["LOS"]), list(cur_test["OUT"]))
-
-                tmp_concordances_wo_pca.append(concordance)
-                tmp_ipecs_wo_pca.append(ipec_score)
-
-                # with PCA
+            for index, cur_train in enumerate(train_dfs[dataset_name]):
                 model = KNNKaplanMeier(n_neighbors=n_neighbor, 
-                    pca_flag=True, n_components=20)
+                    pca_flag=pca_flag, n_components=20)
                 model.fit(cur_train, duration_col='LOS', event_col='OUT')
-                test_time_median_pred = model.pred_median_time(cur_test)
-                proba_matrix = \
-                    model.pred_proba(cur_test, time=ipec.get_check_points())
+                concordance, ipec_score = \
+                    calc_scores(model, cur_train, test_dfs[dataset_name][index])
 
-                concordance = evaluate_predict_result(test_time_median_pred, 
-                    cur_test, print_result=False)
-                ipec_score = ipec.calc_ipec(proba_matrix, 
-                    list(cur_test["LOS"]), list(cur_test["OUT"]))
+                tmp_concordances.append(concordance)
+                tmp_ipecs.append(ipec_score)
 
-                tmp_concordances_w_pca.append(concordance)
-                tmp_ipecs_w_pca.append(ipec_score)
+            avg_concordance = np.average(tmp_concordances)
+            avg_ipec = np.average(tmp_ipecs)
+            print("[LOG] avg. concordance:", avg_concordance)
+            print("[LOG] avg. ipec:", avg_ipec)
 
-
-            avg_concordance_wo_pca = np.average(tmp_concordances_wo_pca)
-            avg_ipec_wo_pca = np.average(tmp_ipecs_wo_pca)
-            print("[LOG] avg. concordance w/o pca:", avg_concordance_wo_pca)
-            print("[LOG] avg. ipec w/o pca:", avg_ipec_wo_pca)
-            concordances_wo_pca[dataset_type][row] = avg_concordance_wo_pca
-            ipecs_wo_pca[dataset_type][row] = avg_ipec_wo_pca
-
-            avg_concordance_w_pca = np.average(tmp_concordances_w_pca)
-            avg_ipec_w_pca = np.average(tmp_ipecs_w_pca)
-            print("[LOG] avg. concordance w/ pca:", avg_concordance_w_pca)
-            print("[LOG] avg. ipec w/ pca:", avg_ipec_w_pca)
-            concordances_w_pca[dataset_type][row] = avg_concordance_w_pca
-            ipecs_w_pca[dataset_type][row] = avg_ipec_w_pca
+            concordances[dataset_name][row] = avg_concordance
+            ipecs[dataset_name][row] = avg_ipec
 
             print("-------------------------------------------------------")
 
-    with open('KNN_results/KNN_wo_pca.pickle', 'wb') as f:
-        pickle.dump([n_neighbors, concordances_wo_pca, ipecs_wo_pca], f, pickle.HIGHEST_PROTOCOL)
-
-    with open('KNN_results/KNN_w_pca.pickle', 'wb') as f:
-        pickle.dump([n_neighbors, concordances_w_pca, ipecs_w_pca], f, pickle.HIGHEST_PROTOCOL)
-
+            with open(filename, 'wb') as f:
+                pickle.dump([n_neighbors, concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)
