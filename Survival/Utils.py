@@ -1,3 +1,6 @@
+from Survival.FeatureEngineer import FeatureEngineer
+from Survival.IPEC import IPEC
+
 import pandas as pd
 import numpy as np
 from fancyimpute import SoftImpute
@@ -74,3 +77,53 @@ def evaluate_predict_result(test_time_median_pred, test_df, test_time_true=None,
             print("pred:", value, "; true:", test_time_true[index])
 
     return concordance_value
+
+def load_val_data(dataset_idxs):
+    fe = FeatureEngineer(verbose=False)
+
+    fold_nums = [10, 1, 1]
+    names_ref = fe.get_diseases_list()
+
+    train_dfs = {}
+    test_dfs = {}
+    dataset_names = []
+
+    for dataset_idx in dataset_idxs:
+        dataset_name = names_ref[dataset_idx]
+        train_dfs[dataset_name] = []
+        test_dfs[dataset_name] = []
+        dataset_names.append(dataset_name)
+        for i in range(fold_nums[dataset_idx] * 5):
+            patient_dict, feature_set, train_id_list, test_id_list = \
+                fe.load_data_as_dict(src_idx=dataset_idx, 
+                    file_prefix="cross_val/"+str(fold_nums[dataset_idx])+"-5fold_"+str(i)+"_", 
+                    low_freq_event_thd=0.03, 
+                    low_freq_value_thd=0.01)
+            train_df, test_df, feature_list = \
+                model_prepare(patient_dict, feature_set, train_id_list, test_id_list)
+            train_dfs[dataset_name].append(train_df)
+            test_dfs[dataset_name].append(test_df)
+
+    return train_dfs, test_dfs, dataset_names
+
+def load_score_containers(dataset_names, parameters):
+    dimension = tuple([len(parameter) for parameter in parameters])
+    concordances = {dataset_name:np.zeros(dimension) for dataset_name in dataset_names}
+    ipecs = {dataset_name:np.zeros(dimension) for dataset_name in dataset_names}
+    return concordances, ipecs
+
+def calc_scores(model, cur_train, cur_test):
+    ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
+        t_step="obs", time_col='LOS', death_identifier='OUT')
+    test_time_median_pred = model.pred_median_time(cur_test)
+    proba_matrix = \
+        model.pred_proba(cur_test, time=ipec.get_check_points())
+    concordance = evaluate_predict_result(test_time_median_pred, 
+        cur_test, print_result=False)
+    ipec_score = ipec.calc_ipec(proba_matrix, 
+        list(cur_test["LOS"]), list(cur_test["OUT"]))
+    return concordance, ipec_score
+
+
+
+

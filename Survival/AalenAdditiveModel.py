@@ -43,17 +43,6 @@ class AalenAdditiveModel:
         else:
             return test_df
 
-    def _update_proba_dict(self, test_df):
-        patient_to_calc = []
-        for patient_id in test_df.index:
-            if patient_id not in self._proba_dict:
-                patient_to_calc.append(patient_id)
-
-        proba_pred = \
-            self.aaf.predict_survival_function(test_df.loc[patient_to_calc])
-        for patient_id in proba_pred.columns:
-            self._proba_dict[patient_id] = proba_pred[patient_id]
-
     def _find_nearest_time(self, time):
         nearest_time = -np.inf
         for tmp_time in self._time_index:
@@ -73,7 +62,6 @@ class AalenAdditiveModel:
         self._duration_col = duration_col
         self._event_col = event_col
         self.aaf.fit(self._train_pca(train_df), duration_col=duration_col, event_col=event_col)
-        self._proba_dict = {}
         self._time_index = list(self.aaf.durations)
 
     def pred_median_time(self, test_df):
@@ -89,16 +77,17 @@ class AalenAdditiveModel:
                isinstance(time, list)
 
         reduced_test_df = self._test_pca(test_df)
-        self._update_proba_dict(reduced_test_df)
+        tmp_probas = self.aaf.predict_survival_function(reduced_test_df)
 
         if isinstance(time, int) or isinstance(time, float):
-            time_in_dict = [self._find_nearest_time(time)] * reduced_test_df.shape[0]
+            time_indice = [self._find_nearest_time(time)]
         else:
-            assert len(time) == reduced_test_df.shape[0]
-            time_in_dict = [self._find_nearest_time(cur_time)
-                            for cur_time in list(time)]
+            time_indice = [self._find_nearest_time(cur_time)
+                          for cur_time in time]
 
-        proba_pred = []
-        for index, patient_id in enumerate(reduced_test_df.index):
-            proba_pred.append(self._proba_dict[patient_id][time_in_dict[index]])
-        return proba_pred
+        num_test = test_df.shape[0]
+        proba_matrix = np.zeros((test_df.shape[0], len(time_indice)))
+        for row, test_index in enumerate(test_df.index):
+            for col, time_index in enumerate(time_indice):
+                proba_matrix[row][col] = tmp_probas[test_index][time_index]
+        return proba_matrix
