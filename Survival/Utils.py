@@ -80,10 +80,12 @@ def evaluate_predict_result(test_time_median_pred, test_df, test_time_true=None,
     return concordance_value
 
 
-def load_val_data(dataset_idxs):
-    fe = FeatureEngineer(verbose=False)
+def load_val_data(dataset_idxs, verbose=False):
+    fe = FeatureEngineer(verbose=verbose)
 
     fold_nums = [10, 1, 1]
+    low_freq_event_thds = [0.02, 0.01, 0.003]
+    low_freq_value_thds = [0.01, 0.005, 0.001]
     names_ref = fe.get_diseases_list()
 
     train_dfs = {}
@@ -94,13 +96,19 @@ def load_val_data(dataset_idxs):
         dataset_name = names_ref[dataset_idx]
         train_dfs[dataset_name] = []
         test_dfs[dataset_name] = []
+        if verbose:
+            print("current dataset:", dataset_name)
         dataset_names.append(dataset_name)
         for i in range(fold_nums[dataset_idx] * 5):
+            if verbose:
+                print("---------------------------------------------")
+                print("fold", i)
+                print(datetime.datetime.now().strftime("%m%d %H:%M:%S"))
             patient_dict, feature_set, train_id_list, test_id_list = \
                 fe.load_data_as_dict(src_idx=dataset_idx, 
                     file_prefix="cross_val/"+str(fold_nums[dataset_idx])+"-5fold_"+str(i)+"_", 
-                    low_freq_event_thd=0.03, 
-                    low_freq_value_thd=0.01)
+                    low_freq_event_thd=low_freq_event_thds[dataset_idx], 
+                    low_freq_value_thd=low_freq_value_thds[dataset_idx])
             train_df, test_df, feature_list = \
                 model_prepare(patient_dict, feature_set, train_id_list, test_id_list)
             train_dfs[dataset_name].append(train_df)
