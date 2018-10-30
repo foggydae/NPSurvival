@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from fancyimpute import SoftImpute
 import lifelines
+import datetime
 
 
 def corr_feature_filter(df, corr_thd=1, method='pearson'):
@@ -78,6 +79,7 @@ def evaluate_predict_result(test_time_median_pred, test_df, test_time_true=None,
 
     return concordance_value
 
+
 def load_val_data(dataset_idxs):
     fe = FeatureEngineer(verbose=False)
 
@@ -106,11 +108,13 @@ def load_val_data(dataset_idxs):
 
     return train_dfs, test_dfs, dataset_names
 
+
 def load_score_containers(dataset_names, parameters):
     dimension = tuple([len(parameter) for parameter in parameters])
     concordances = {dataset_name:np.zeros(dimension) for dataset_name in dataset_names}
     ipecs = {dataset_name:np.zeros(dimension) for dataset_name in dataset_names}
     return concordances, ipecs
+
 
 def calc_scores(model, cur_train, cur_test):
     ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
@@ -124,6 +128,16 @@ def calc_scores(model, cur_train, cur_test):
         list(cur_test["LOS"]), list(cur_test["OUT"]))
     return concordance, ipec_score
 
+
+def filename_generator(model_name, pca_flag, dataset_idxs):
+    now = datetime.datetime.now()
+    filename = model_name + "_results/" + model_name
+    if pca_flag:
+        filename += "_P_"
+    for dataset_idx in dataset_idxs:
+        filename += str(dataset_idx)
+    filename += "_" + now.strftime("%m%d_%H%M") + ".pickle"
+    return filename
 
 
 
