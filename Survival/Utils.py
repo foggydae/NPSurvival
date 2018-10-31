@@ -139,9 +139,9 @@ def calc_scores(model, cur_train, cur_test):
 
 def filename_generator(model_name, pca_flag, dataset_idxs):
     now = datetime.datetime.now()
-    filename = model_name + "_results/" + model_name
+    filename = model_name + "_results/" + model_name + "_"
     if pca_flag:
-        filename += "_P_"
+        filename += "P_"
     for dataset_idx in dataset_idxs:
         filename += str(dataset_idx)
     filename += "_" + now.strftime("%m%d_%H%M") + ".pickle"

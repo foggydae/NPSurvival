@@ -13,7 +13,7 @@ if __name__ == '__main__':
     # get the parameters
     n_trees = [50]
     max_features = [10, 20, 40, 80, 200]
-    max_depths = [3, 6, 10]
+    max_depths = [6, 10]
     pca_flag = False
     dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
     filename = filename_generator("RSF", pca_flag, dataset_idxs)
