@@ -11,9 +11,9 @@ import pickle
 if __name__ == '__main__':
     
     ## set the parameters
-    n_components = [10, 15, 17, 19, 25, 30]
+    n_components = [10, 15, 16, 17, 18, 19, 20, 21, 23, 25, 30, 40, 50]
     pca_flag = True
-    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    dataset_idxs = [0, 1] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
     filename = filename_generator("WBR", pca_flag, dataset_idxs)
 
     

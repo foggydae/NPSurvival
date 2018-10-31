@@ -1,0 +1,129 @@
+
+For the pancreatitis dataset:
+[LOG] n_tree = 50, max_feature = 10, max_depth = 3
+/media/latte/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+/home/rzuo/.local/lib/python3.6/site-packages/fancyimpute/soft_impute.py:100: RuntimeWarning: divide by zero encountered in double_scalars
+  return (np.sqrt(ssd) / old_norm) < self.convergence_threshold
+[LOG] avg. concordance: 0.5715319865319866
+[LOG] avg. ipec: 1.9731668854610682
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 6
+[LOG] avg. concordance: 0.5606467051467051
+[LOG] avg. ipec: 2.197834430512985
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.5611890331890331
+[LOG] avg. ipec: 2.1622179768809304
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 3
+[LOG] avg. concordance: 0.5730704665704667
+[LOG] avg. ipec: 1.9541753518974598
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 6
+[LOG] avg. concordance: 0.5697607022607022
+[LOG] avg. ipec: 1.9788635274241713
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.5622075517075518
+[LOG] avg. ipec: 2.019679655969636
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 3
+[LOG] avg. concordance: 0.5710490620490621
+[LOG] avg. ipec: 1.9767926929247537
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 6
+[LOG] avg. concordance: 0.5526416546416546
+[LOG] avg. ipec: 1.9715823656892062
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5619025974025973
+[LOG] avg. ipec: 2.039329576383073
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 3
+[LOG] avg. concordance: 0.5419482924482923
+[LOG] avg. ipec: 1.9986478530736165
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 6
+[LOG] avg. concordance: 0.5340435305435305
+[LOG] avg. ipec: 2.0780574804465672
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.5420750360750359
+[LOG] avg. ipec: 2.0328756839271427
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 3
+[LOG] avg. concordance: 0.5335598845598846
+[LOG] avg. ipec: 2.0163429066123477
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 6
+[LOG] avg. concordance: 0.5324607984607984
+[LOG] avg. ipec: 1.9938563720242974
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.535505772005772
+[LOG] avg. ipec: 2.1388608241959477
+-------------------------------------------------------
+
+For the ich dataset:
+[LOG] n_tree = 50, max_feature = 10, max_depth = 3
+[LOG] avg. concordance: 0.5879434181480191
+[LOG] avg. ipec: 1.9428630514958845
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 6
+[LOG] avg. concordance: 0.5837409085627978
+[LOG] avg. ipec: 2.17928364567945
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 10, max_depth = 10
+[LOG] avg. concordance: 0.575401068897409
+[LOG] avg. ipec: 2.1290864492677475
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 3
+[LOG] avg. concordance: 0.5876615545486232
+[LOG] avg. ipec: 1.8147074519731337
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 6
+[LOG] avg. concordance: 0.5875495526896712
+[LOG] avg. ipec: 2.113068999220995
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 20, max_depth = 10
+[LOG] avg. concordance: 0.5874712443360056
+[LOG] avg. ipec: 2.2078232049192392
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 3
+[LOG] avg. concordance: 0.5655611711397699
+[LOG] avg. ipec: 1.8949290656758175
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 6
+[LOG] avg. concordance: 0.5952223771348901
+[LOG] avg. ipec: 1.9580593009560894
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 40, max_depth = 10
+[LOG] avg. concordance: 0.5837526431973974
+[LOG] avg. ipec: 2.061669715261905
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 3
+[LOG] avg. concordance: 0.5836003253166028
+[LOG] avg. ipec: 1.8733824640268029
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 6
+[LOG] avg. concordance: 0.5580346229812942
+[LOG] avg. ipec: 1.7582790761672764
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 80, max_depth = 10
+[LOG] avg. concordance: 0.5834760079005459
+[LOG] avg. ipec: 2.0817682982119345
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 3
+[LOG] avg. concordance: 0.5535619844312768
+[LOG] avg. ipec: 1.863754752754513
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 6
+[LOG] avg. concordance: 0.5446183339142558
+[LOG] avg. ipec: 1.8146320952945953
+-------------------------------------------------------
+[LOG] n_tree = 50, max_feature = 200, max_depth = 10
+[LOG] avg. concordance: 0.5635364238410596
+[LOG] avg. ipec: 1.870787320269033
+-------------------------------------------------------
