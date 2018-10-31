@@ -1,0 +1,1025 @@
+---------------------------------------------
+fold 0
+1030 17:48:08
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+/home/rzuo/.local/lib/python3.6/site-packages/fancyimpute/soft_impute.py:100: RuntimeWarning: divide by zero encountered in double_scalars
+  return (np.sqrt(ssd) / old_norm) < self.convergence_threshold
+---------------------------------------------
+fold 1
+1030 17:48:18
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 2
+1030 17:48:28
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 3
+1030 17:48:37
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 4
+1030 17:48:47
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 5
+1030 17:48:57
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 6
+1030 17:49:06
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 7
+1030 17:49:16
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 8
+1030 17:49:25
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 9
+1030 17:49:35
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 10
+1030 17:49:44
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 11
+1030 17:49:54
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 12
+1030 17:50:04
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 13
+1030 17:50:13
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 14
+1030 17:50:23
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 15
+1030 17:50:33
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 16
+1030 17:50:42
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 17
+1030 17:50:52
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 18
+1030 17:51:01
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 19
+1030 17:51:11
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 20
+1030 17:51:20
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 21
+1030 17:51:30
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 22
+1030 17:51:40
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 23
+1030 17:51:49
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 24
+1030 17:51:59
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 25
+1030 17:52:08
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 26
+1030 17:52:18
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 27
+1030 17:52:28
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 28
+1030 17:52:37
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 29
+1030 17:52:47
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 30
+1030 17:52:56
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 31
+1030 17:53:06
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 32
+1030 17:53:16
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 33
+1030 17:53:25
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 34
+1030 17:53:35
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 35
+1030 17:53:44
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 36
+1030 17:53:54
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 37
+1030 17:54:04
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 38
+1030 17:54:13
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 39
+1030 17:54:23
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 40
+1030 17:54:32
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 41
+1030 17:54:42
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 42
+1030 17:54:52
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 43
+1030 17:55:01
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 44
+1030 17:55:11
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 45
+1030 17:55:20
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 46
+1030 17:55:30
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 47
+1030 17:55:39
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 48
+1030 17:55:49
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 49
+1030 17:55:59
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 8 times.
+[LOG]Number of events that ever occurred: 1487
+[LOG]Number of events that occurred for more than 8 times: 529
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 2 times.
+[LOG]After one-hot encoding, number of feature: 897
+[LOG]Among them, number of categorical feature: 595
+[LOG]Simplify output dict and check correctness.
+current dataset: ich
+---------------------------------------------
+fold 0
+1030 17:56:08
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 22 times.
+[LOG]Number of events that ever occurred: 1896
+[LOG]Number of events that occurred for more than 22 times: 460
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 7 times.
+[LOG]After one-hot encoding, number of feature: 936
+[LOG]Among them, number of categorical feature: 701
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 1
+1030 17:57:46
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 22 times.
+[LOG]Number of events that ever occurred: 1896
+[LOG]Number of events that occurred for more than 22 times: 460
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 7 times.
+[LOG]After one-hot encoding, number of feature: 936
+[LOG]Among them, number of categorical feature: 701
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 2
+1030 17:59:23
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 22 times.
+[LOG]Number of events that ever occurred: 1896
+[LOG]Number of events that occurred for more than 22 times: 460
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 7 times.
+[LOG]After one-hot encoding, number of feature: 936
+[LOG]Among them, number of categorical feature: 701
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 3
+1030 18:00:58
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 22 times.
+[LOG]Number of events that ever occurred: 1896
+[LOG]Number of events that occurred for more than 22 times: 460
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 7 times.
+[LOG]After one-hot encoding, number of feature: 936
+[LOG]Among them, number of categorical feature: 701
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 4
+1030 18:02:34
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 22 times.
+[LOG]Number of events that ever occurred: 1896
+[LOG]Number of events that occurred for more than 22 times: 460
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 7 times.
+[LOG]After one-hot encoding, number of feature: 936
+[LOG]Among them, number of categorical feature: 701
+[LOG]Simplify output dict and check correctness.
+current dataset: sepsis
+---------------------------------------------
+fold 0
+1030 18:04:09
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 283 times.
+[LOG]Number of events that ever occurred: 4015
+[LOG]Number of events that occurred for more than 283 times: 291
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 94 times.
+[LOG]After one-hot encoding, number of feature: 441
+[LOG]Among them, number of categorical feature: 255
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 1
+1030 18:07:10
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 283 times.
+[LOG]Number of events that ever occurred: 4015
+[LOG]Number of events that occurred for more than 283 times: 291
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 94 times.
+[LOG]After one-hot encoding, number of feature: 441
+[LOG]Among them, number of categorical feature: 255
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 2
+1030 18:10:09
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 283 times.
+[LOG]Number of events that ever occurred: 4015
+[LOG]Number of events that occurred for more than 283 times: 291
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 94 times.
+[LOG]After one-hot encoding, number of feature: 441
+[LOG]Among them, number of categorical feature: 255
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 3
+1030 18:13:06
+[LOG]Reading train&test csv...
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 283 times.
+[LOG]Number of events that ever occurred: 4015
+[LOG]Number of events that occurred for more than 283 times: 291
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 94 times.
+[LOG]After one-hot encoding, number of feature: 441
+[LOG]Among them, number of categorical feature: 255
+[LOG]Simplify output dict and check correctness.
+---------------------------------------------
+fold 4
+1030 18:16:05
+[LOG]Reading train&test csv...
+sys:1: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+[LOG]Process df row by row and update dict.
+[LOG]Reading patient list, LoS, TUD...
+[LOG]Identify one-hot encoded event, extract 'true event' and value.
+[LOG]Count occurance for each event; Remove 'na' in value.
+[LOG]Feature filtering. Remove events that occurred for less than 283 times.
+[LOG]Number of events that ever occurred: 4015
+[LOG]Number of events that occurred for more than 283 times: 291
+[LOG]Identify categorical event.
+[LOG]One-hot encoding categorical event. Scalarize numerical.
+[LOG]Value filtering. Remove values that occurred for less than 94 times.
+[LOG]After one-hot encoding, number of feature: 441
+[LOG]Among them, number of categorical feature: 255
+[LOG]Simplify output dict and check correctness.

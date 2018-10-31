@@ -13,11 +13,11 @@ if __name__ == '__main__':
     ## set the parameters
     n_components = [10, 15, 17, 19, 25, 30]
     pca_flag = True
-    dataset_idxs = [0] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
     filename = filename_generator("WBR", pca_flag, dataset_idxs)
 
     
-    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs)
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True)
     concordances, ipecs = load_score_containers(dataset_names, [n_components])
 
     for dataset_name in dataset_names:

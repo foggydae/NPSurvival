@@ -17,7 +17,7 @@ if __name__ == '__main__':
     filename = filename_generator("AAM", pca_flag, dataset_idxs)
 
     
-    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs)
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True)
     concordances, ipecs = load_score_containers(dataset_names, [coef_penalizers])
 
     for dataset_name in dataset_names:
