@@ -11,13 +11,13 @@ import pickle
 if __name__ == '__main__':
     
     ## set the parameters
-    coef_penalizers = [0.05, 0.08, 0.1, 0.12, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+    coef_penalizers = [0.01, 0.03, 0.05, 0.07, 0.09, 0.11, 0.13, 0.15, 0.17, 0.19, 0.21, 0.23, 0.25, 0.27, 0.29, 0.32, 0.35, 0.38, 0.4, 0.42, 0.45, 0.48, 0.5, 0.53, 0.56, 0.6, 0.63, 0.66, 0.7, 0.73, 0.76, 0.8, 0.83, 0.86, 0.9]
     pca_flag = False
-    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    dataset_idxs = [0, 1] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
     filename = filename_generator("AAM", pca_flag, dataset_idxs)
 
     
-    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True)
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=False)
     concordances, ipecs = load_score_containers(dataset_names, [coef_penalizers])
 
     for dataset_name in dataset_names:
