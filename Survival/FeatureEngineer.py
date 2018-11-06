@@ -222,20 +222,23 @@ class FeatureEngineer():
         patient_dict = defaultdict(lambda: defaultdict(list))
         na_event_set = set([])
         non_na_event_set = set([])
-       
+
         if self.verbose:
             print("[LOG]Process df row by row and update dict.")
-        for index, pieces in df.iterrows():
-            patient_id = int(float(pieces["patientID"]))
-            piece_event = pieces["event"]
-            piece_value = self.value_data_cleaning(pieces["value"], piece_event)
+
+        matrix = df.values
+        feature_idx = {feature:idx for idx, feature in enumerate(df.columns)}
+        for pieces in matrix:
+            patient_id = int(float(pieces[feature_idx["patientID"]]))
+            piece_event = pieces[feature_idx["event"]]
+            piece_value = self.value_data_cleaning(pieces[feature_idx["value"]], piece_event)
             if piece_event.endswith(":"):
                 if piece_event in event_change_dict:
                     piece_event = event_change_dict[piece_event]
                 else:
                     piece_event = self.process_event_ends_with_colon(
                         piece_event, df)
-                    event_change_dict[pieces["event"]] = piece_event
+                    event_change_dict[pieces[feature_idx["event"]]] = piece_event
                
             if piece_event == "chart:admit wt":
                 piece_value = self.pounds_to_kg(piece_value) # lbs to kg
@@ -577,11 +580,11 @@ class FeatureEngineer():
                 feature_delete = patient_dict[patient_id].keys() - feature_set
                 for feature in feature_delete:
                     del patient_dict[patient_id][feature]
-            for feature in feature_set:
-                if feature in patient_dict[patient_id]:
-                    value = patient_dict[patient_id][feature]
-                    assert type(value) != str and type(value) != list
-                    assert not math.isnan(value)
+            # for feature in feature_set:
+            #     if feature in patient_dict[patient_id]:
+            #         value = patient_dict[patient_id][feature]
+            #         assert type(value) != str and type(value) != list
+            #         assert not math.isnan(value)
 
         train_id_list = list(id_set["train"])
         test_id_list = list(id_set["test"])
