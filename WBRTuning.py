@@ -12,41 +12,41 @@ if __name__ == '__main__':
     
     ## set the parameters
     n_components = [10, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 45, 40, 45, 50]
-    pca_flag = True
-    dataset_idxs = [0] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
-    filename = filename_generator("WBR", pca_flag, dataset_idxs)
+    pca_flags = [True]
+    dataset_idxs = [0, 1, 2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
 
-    
-    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True, data_path="../../dataset/")
-    concordances, ipecs = load_score_containers(dataset_names, [n_components])
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True)
 
-    for dataset_name in dataset_names:
-        print("\nFor the " + dataset_name + " dataset:")
+    for pca_flag in pca_flags:
+        for dataset_idx, dataset_name in enumerate(dataset_names):
+            filename = filename_generator("WBR", pca_flag, [dataset_idx])
+            concordances, ipecs = load_score_containers([dataset_name], [n_components])
+            print("\nFor the " + dataset_name + " dataset:")
 
-        for row, n_component in enumerate(n_components):
-            print("[LOG] n_component = {}".format(n_component))
+            for row, n_component in enumerate(n_components):
+                print("[LOG] n_component = {}".format(n_component))
 
-            tmp_concordances = []
-            tmp_ipecs = []
+                tmp_concordances = []
+                tmp_ipecs = []
 
-            for index, cur_train in enumerate(train_dfs[dataset_name]):
-                model = WeibullRegressionModel(pca_flag=pca_flag, n_components=n_component)
-                model.fit(cur_train, duration_col='LOS', event_col='OUT')
-                concordance, ipec_score = \
-                    calc_scores(model, cur_train, test_dfs[dataset_name][index], print_result=True)
+                for index, cur_train in enumerate(train_dfs[dataset_name]):
+                    model = WeibullRegressionModel(pca_flag=pca_flag, n_components=n_component)
+                    model.fit(cur_train, duration_col='LOS', event_col='OUT')
+                    concordance, ipec_score = \
+                        calc_scores(model, cur_train, test_dfs[dataset_name][index], print_result=True)
 
-                tmp_concordances.append(concordance)
-                tmp_ipecs.append(ipec_score)
+                    tmp_concordances.append(concordance)
+                    tmp_ipecs.append(ipec_score)
 
-            avg_concordance = np.average(tmp_concordances)
-            avg_ipec = np.average(tmp_ipecs)
-            print("[LOG] avg. concordance:", avg_concordance)
-            print("[LOG] avg. ipec:", avg_ipec)
+                avg_concordance = np.average(tmp_concordances)
+                avg_ipec = np.average(tmp_ipecs)
+                print("[LOG] avg. concordance:", avg_concordance)
+                print("[LOG] avg. ipec:", avg_ipec)
 
-            concordances[dataset_name][row] = avg_concordance
-            ipecs[dataset_name][row] = avg_ipec
+                concordances[dataset_name][row] = avg_concordance
+                ipecs[dataset_name][row] = avg_ipec
 
-            print("-------------------------------------------------------")
+                print("-------------------------------------------------------")
 
-            with open(filename, 'wb') as f:
-                pickle.dump([n_components, concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)
+                with open(filename, 'wb') as f:
+                    pickle.dump([n_components, concordances, ipecs], f, pickle.HIGHEST_PROTOCOL)
