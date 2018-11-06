@@ -11,13 +11,13 @@ import pickle
 if __name__ == '__main__':
     
     # get the parameters
-    lambds = [0.01, 0.02, 0.03, 0.04, 0.05, 0.07, 0.08, 0.09, 0.1, 0.12, 0.15]
-    pca_flag = False
-    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    lambds = [0.0001, 0.01, 0.02, 0.03, 0.04, 0.05, 0.07, 0.09]
+    pca_flag = True
+    dataset_idxs = [0] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
     filename = filename_generator("COX", pca_flag, dataset_idxs)
 
 
-    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True)
+    train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=True, data_path="../../dataset/")
     concordances, ipecs = load_score_containers(dataset_names, [lambds])
 
     for dataset_name in dataset_names:
@@ -34,7 +34,7 @@ if __name__ == '__main__':
                     pca_flag=pca_flag, n_components=20)
                 model.fit(cur_train, duration_col='LOS', event_col='OUT')
                 concordance, ipec_score = \
-                    calc_scores(model, cur_train, test_dfs[dataset_name][index])
+                    calc_scores(model, cur_train, test_dfs[dataset_name][index], print_result=True)
 
                 tmp_concordances.append(concordance)
                 tmp_ipecs.append(ipec_score)
