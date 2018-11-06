@@ -19,10 +19,12 @@ def corr_feature_filter(df, corr_thd=1, method='pearson'):
     return dup_feature
 
 
-def model_prepare(patient_dict, feature_set, train_id_list, test_id_list):
+def model_prepare(patient_dict, feature_set, train_id_list, test_id_list, verbose=False):
     patient_df = \
         pd.DataFrame.from_dict(patient_dict, orient='index')[feature_set]
 
+    if verbose:
+        print("[LOG]Impute missing value.")
     # missing value imputation using SoftImpute
     imputed_result = SoftImpute(verbose=False).complete(
         patient_df.drop(columns=["LOS", "OUT"]).values)
@@ -32,11 +34,16 @@ def model_prepare(patient_dict, feature_set, train_id_list, test_id_list):
     imputed_patient_df["LOS"] = patient_df["LOS"]
     imputed_patient_df["OUT"] = patient_df["OUT"]
 
+    if verbose:
+        print("[LOG]Remove correlated features.")
     # remove correlated features
     dup_feature = corr_feature_filter(imputed_patient_df, corr_thd=1)
-    #     print("Number of dumplicated featues:", len(dup_feature))
+    if verbose:
+        print("    Number of dumplicated featues:", len(dup_feature))
     imputed_patient_df.drop(columns=dup_feature, inplace=True)
 
+    if verbose:
+        print("[LOG]Remove rows that has infinite LoS.")
     # remove rows that has infinite LoS
     inf_id_set = \
         set(imputed_patient_df[imputed_patient_df["LOS"] == np.inf].index)
@@ -80,8 +87,8 @@ def evaluate_predict_result(test_time_median_pred, test_df, test_time_true=None,
     return concordance_value
 
 
-def load_val_data(dataset_idxs, verbose=False):
-    fe = FeatureEngineer(verbose=verbose)
+def load_val_data(dataset_idxs, verbose=False, data_path=None):
+    fe = FeatureEngineer(verbose=verbose, data_path=data_path)
 
     fold_nums = [10, 1, 1]
     low_freq_event_thds = [0.02, 0.01, 0.003]
@@ -110,7 +117,7 @@ def load_val_data(dataset_idxs, verbose=False):
                     low_freq_event_thd=low_freq_event_thds[dataset_idx], 
                     low_freq_value_thd=low_freq_value_thds[dataset_idx])
             train_df, test_df, feature_list = \
-                model_prepare(patient_dict, feature_set, train_id_list, test_id_list)
+                model_prepare(patient_dict, feature_set, train_id_list, test_id_list, verbose=verbose)
             train_dfs[dataset_name].append(train_df)
             test_dfs[dataset_name].append(test_df)
 
@@ -124,16 +131,16 @@ def load_score_containers(dataset_names, parameters):
     return concordances, ipecs
 
 
-def calc_scores(model, cur_train, cur_test):
+def calc_scores(model, cur_train, cur_test, print_result=False):
     ipec = IPEC(cur_train, g_type="All_One", t_thd=0.8, 
-        t_step="obs", time_col='LOS', death_identifier='OUT')
+        t_step="obs", time_col='LOS', death_identifier='OUT', verbose=False)
     test_time_median_pred = model.pred_median_time(cur_test)
     proba_matrix = \
         model.pred_proba(cur_test, time=ipec.get_check_points())
     concordance = evaluate_predict_result(test_time_median_pred, 
-        cur_test, print_result=False)
+        cur_test, print_result=print_result)
     ipec_score = ipec.calc_ipec(proba_matrix, 
-        list(cur_test["LOS"]), list(cur_test["OUT"]))
+        list(cur_test["LOS"]), list(cur_test["OUT"]), print_result=print_result)
     return concordance, ipec_score
 
 
