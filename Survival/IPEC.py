@@ -7,7 +7,7 @@ import pandas as pd
 class IPEC:
 
     def __init__(self, train_df, g_type="All_One", t_thd=0.8, t_step="obs",
-                 time_col="LOS", death_identifier="OUT", divide_by="N", 
+                 time_col="LOS", death_identifier="OUT", divide_by="T", 
                  verbose=False):
         """
         Constructor
@@ -65,11 +65,13 @@ class IPEC:
     def get_check_points(self):
         return self._check_points[1:]
 
-    def calc_ipec(self, prob_matrix, obs_test_times, obs_test_events):
+    def calc_ipec(self, prob_matrix, obs_test_times, obs_test_events, 
+                  print_result=False, show_IPECj=False):
         assert prob_matrix.shape[0] == len(obs_test_times) and \
                len(obs_test_times) == len(obs_test_events)
         assert prob_matrix.shape[1] == len(self._check_points) - 1
 
+        ipec_list = []
         for obs_id in range(len(obs_test_times)):
             t_obs = obs_test_times[obs_id]
             d_obs = obs_test_events[obs_id]
@@ -97,9 +99,17 @@ class IPEC:
             self.verbose_print("")
 
             if self._divide_by == "T":
-                return t_times_ipec / self._upperT
+                ipec_list.append(t_times_ipec / self._upperT)
             else:
-                return t_times_ipec
+                ipec_list.append(t_times_ipec)
+
+        if print_result:
+            print("IPEC:", np.average(ipec_list))
+        if show_IPECj:
+            print("IPEC for each observation in test:")
+            print(ipec_list)
+
+        return np.average(ipec_list)
 
     def verbose_print(self, content):
         if self._verbose:
