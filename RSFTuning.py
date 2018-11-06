@@ -51,8 +51,8 @@ if __name__ == '__main__':
                         print("[LOG] avg. concordance:", avg_concordance)
                         print("[LOG] avg. ipec:", avg_ipec)
 
-                        concordances[dataset_type][dim1][dim2][dim3] = avg_concordance
-                        ipecs[dataset_type][dim1][dim2][dim3] = avg_ipec
+                        concordances[dataset_name][dim1][dim2][dim3] = avg_concordance
+                        ipecs[dataset_name][dim1][dim2][dim3] = avg_ipec
 
                         print("-------------------------------------------------------")
 
