@@ -55,7 +55,6 @@ class KNNKaplanMeier():
         self.train_points = len(train_x)
 
     def pred_median_time(self, test_df):
-        assert isinstance(test_df, pd.DataFrame)
         reduced_test_df = self._test_pca(test_df)
         test_x = \
             reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
@@ -76,10 +75,6 @@ class KNNKaplanMeier():
         return np.array(test_time_median_pred)
 
     def pred_proba(self, test_df, time):
-        assert isinstance(test_df, pd.DataFrame)
-        assert isinstance(time, int) \
-               or isinstance(time, float) \
-               or isinstance(time, list)
         reduced_test_df = self._test_pca(test_df)
 
         if isinstance(time, int) or isinstance(time, float):
@@ -90,7 +85,7 @@ class KNNKaplanMeier():
         test_x = \
             reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
         distance_matrix, neighbor_matrix = \
-            self.neighbors.kneighbors(X=test_x, n_neighbors=self.n_neighbors)
+            self.neighbors.kneighbors(X=test_x, n_neighbors=int(np.min([self.n_neighbors, self.train_points])))
 
         proba_matrix = []
         for test_idx, test_point in enumerate(test_x):
@@ -104,3 +99,36 @@ class KNNKaplanMeier():
             proba_matrix.append(kmf.predict(time_list))
 
         return np.array(proba_matrix)
+
+    def predict(self, test_df, time_list):
+        reduced_test_df = self._test_pca(test_df)
+        test_x = \
+            reduced_test_df.drop(columns=[self._duration_col, self._event_col]).values
+        distance_matrix, neighbor_matrix = \
+            self.neighbors.kneighbors(X=test_x, n_neighbors=int(np.min([self.n_neighbors, self.train_points])))
+
+        test_time_median_pred = []
+        proba_matrix = []
+        for test_idx, test_point in enumerate(test_x):
+            neighbor_train_y = \
+                self.train_df.iloc[neighbor_matrix[test_idx]][
+                    [self._duration_col, self._event_col]
+                ]
+            kmf = KaplanMeierFitter()
+            kmf.fit(neighbor_train_y[self._duration_col],
+                    neighbor_train_y[self._event_col])
+
+            survival_proba = kmf.predict(time_list)
+            for col, proba in enumerate(survival_proba):
+                if proba > 0.5:
+                    continue
+                if proba == 0.5:
+                    median_time = time_list[col]
+                else:
+                    median_time = (time_list[col - 1] + time_list[col]) / 2
+                break
+
+            test_time_median_pred.append(median_time)
+            proba_matrix.append(survival_proba)
+
+        return np.array(test_time_median_pred), np.array(proba_matrix)

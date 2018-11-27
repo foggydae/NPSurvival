@@ -13,7 +13,7 @@ if __name__ == '__main__':
     # get the parameters
     lambds = [0.0001, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15]
     pca_flags = [True, False]
-    dataset_idxs = [2] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
+    dataset_idxs = [0, 1] # 0: "pancreatitis", 1: "ich", 2: "sepsis"
 
     train_dfs, test_dfs, dataset_names = load_val_data(dataset_idxs, verbose=False)
 
