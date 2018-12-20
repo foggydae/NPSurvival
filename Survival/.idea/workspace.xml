@@ -14,87 +14,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="FeatureEngineer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/FeatureEngineer.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="NeuralNetworkCox.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NeuralNetworkCox.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5130">
-              <caret line="342" column="66" lean-forward="false" selection-start-line="342" selection-start-column="30" selection-end-line="342" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/Utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPEC.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/IPEC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-              <folding>
-                <element signature="e#35#92#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KNNKaplanMeier.py" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/KNNKaplanMeier.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoxPHModel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/CoxPHModel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2655">
-              <caret line="177" column="12" lean-forward="false" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomSurvivalForest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/RandomSurvivalForest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="283" column="22" lean-forward="false" selection-start-line="283" selection-start-column="22" selection-end-line="283" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AalenAdditiveModel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/AalenAdditiveModel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,14 +48,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/FeatureEngineer.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/IPEC.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/KNNKaplanMeier.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/CoxPHModel.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/RandomSurvivalForest.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/AalenAdditiveModel.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/Utils.py" />
-        <option value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/TestURL.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/FeatureEngineer.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/IPEC.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/KNNKaplanMeier.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/CoxPHModel.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/RandomSurvivalForest.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/AalenAdditiveModel.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/Utils.py" />
+        <option value="$PROJECT_DIR$/../npsurvival/TestURL.py" />
+        <option value="$PROJECT_DIR$/IPEC.py" />
       </list>
     </option>
   </component>
@@ -171,6 +98,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="npsurvival">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -195,35 +141,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="npsurvival">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FullScreen" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival" />
-      <recent name="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts" />
+      <recent name="$PROJECT_DIR$/../npsurvival" />
+      <recent name="$PROJECT_DIR$/.." />
     </key>
   </component>
   <component name="RunManager" selected="Python.IPEC">
@@ -234,12 +162,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../npsurvival" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="npsurvival" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/IPEC.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../npsurvival/IPEC.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -401,26 +329,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.50277776" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28015953" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28015953" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -433,75 +361,37 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworkCox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="160" column="57" lean-forward="true" selection-start-line="160" selection-start-column="57" selection-end-line="160" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../npsurvival/FeatureEngineer.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/Utils.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/IPEC.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/KNNKaplanMeier.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/CoxPHModel.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/RandomSurvivalForest.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/AalenAdditiveModel.py" />
     <entry file="file:///usr/local/lib/python3.6/site-packages/lifelines/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/CoxPHModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2655">
-          <caret line="177" column="12" lean-forward="false" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/AalenAdditiveModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/FeatureEngineer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5130">
-          <caret line="342" column="66" lean-forward="false" selection-start-line="342" selection-start-column="30" selection-end-line="342" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/IPEC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding>
-            <element signature="e#35#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/RandomSurvivalForest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="283" column="22" lean-forward="false" selection-start-line="283" selection-start-column="22" selection-end-line="283" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/TestURL.py">
+    <entry file="file://$PROJECT_DIR$/../npsurvival/CoxPHModel.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/AalenAdditiveModel.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/FeatureEngineer.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/IPEC.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/RandomSurvivalForest.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/Utils.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/TestURL.py" />
+    <entry file="file://$PROJECT_DIR$/../npsurvival/KNNKaplanMeier.py" />
+    <entry file="file://$PROJECT_DIR$/IPEC.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -509,13 +399,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Works/George Chen/Survival_Analysis/scripts/scripts/npsurvival/KNNKaplanMeier.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworkCox.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
